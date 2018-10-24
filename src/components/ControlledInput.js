@@ -9,14 +9,16 @@ export default class ControlledInput extends React.Component{
 
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     })
   }
 
   render(){
     return(
       <div className="controlled-input">
-        <input type="text" name="firstName" onChange="event => handleChange(event)" />
+        <form>
+          <input type="text" name="firstName" onChange="event => handleChange(event)" value="this.state.firstName" />
+        </form>
       </div>
     )
   }
